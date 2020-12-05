@@ -90,7 +90,7 @@ class VideoPlayer extends Component {
 
     render() {
         return (
-            <video id={this.playerId} className={`video-js ${this.props.bigPlayButtonCentered? 'vjs-big-play-centered' : ''} ${this.props.className}`}></video>
+            <video id={this.playerId}  title={this.props.title}  className={`video-js ${this.props.bigPlayButtonCentered? 'vjs-big-play-centered' : ''} ${this.props.className}`}></video>
         )
     }
 }
@@ -115,7 +115,8 @@ VideoPlayer.propTypes = {
     onEnd: PropTypes.func,
     playbackRates: PropTypes.arrayOf(PropTypes.number),
     hidePlaybackRates: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
+    title: PropTypes.title
 }
 
 VideoPlayer.defaultProps = {
@@ -127,6 +128,7 @@ VideoPlayer.defaultProps = {
     playbackRates: [0.5, 1, 1.5, 2],
     hidePlaybackRates: false,
     className: "",
+    title: "",
     hideControls: [],
     bigPlayButton: true,
     bigPlayButtonCentered: true,
